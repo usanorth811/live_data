@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    
     <b-container>
       <b-row style='padding-bottom:25px'>
         <b-col>
@@ -36,6 +37,7 @@
         </b-col>
       </b-row>
     </b-container>
+    <b-img src='./src/assets/811-logo.svg' width='150' style="padding-top:100px; padding-bottom: 25px;" />
   </div>
 </template>
 
@@ -103,5 +105,9 @@ a {
 }
 body {
   background-color:#212529;
+}
+img {
+  max-width: 65%;
+    
 }
 </style>
