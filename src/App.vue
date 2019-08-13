@@ -2,6 +2,11 @@
   <div id="app">
     <b-container>
       <b-row>
+        <b-col>
+          <h1 style='padding-bottom:25px'>Live Stats</h1>
+        </b-col>
+      </b-row>
+      <b-row>
         <b-col lg='4' md='12' >
           <div>
             <h4>Total Tickets</h4>
