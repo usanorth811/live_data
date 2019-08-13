@@ -8,30 +8,30 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col lg='4' md='12' >
+        <b-col lg='4' md='12' style='padding-bottom:25px'>
           <div>
             <h4>Total Tickets</h4>
-            <b-table striped hover :items="info"></b-table>
+            <b-table striped hover dark :items="info"></b-table>
           </div>
           <div>
             <h4>CA Tickets</h4>
-            <b-table striped hover :items="info4"></b-table>
+            <b-table striped hover dark :items="info4"></b-table>
           </div>
           <div>
             <h4>NV Tickets</h4>
-            <b-table striped hover :items="info5"></b-table>
+            <b-table striped hover dark :items="info5"></b-table>
           </div>
         </b-col>
-        <b-col lg='4' md='12' style="position:relative; overflow-y:auto; height:565px;">
+        <b-col lg='4' md='12' style="position:relative; overflow-y:auto; height:580px;padding-bottom:25px">
           <div>
             <h4>DPS Leaderboard</h4>
-            <b-table striped hover :items="info2" ></b-table>
+            <b-table striped hover dark :items="info2" ></b-table>
           </div>
         </b-col>
-        <b-col lg='4' md='12' style="position:relative; overflow-y:auto; height:565px;">
+        <b-col lg='4' md='12' style="position:relative; overflow-y:auto; height:580px;padding-bottom:25px">
           <div>
             <h4>WEB Leaderboard</h4>
-            <b-table striped hover :items="info3"></b-table>
+            <b-table striped hover dark :items="info3"></b-table>
           </div>
         </b-col>
       </b-row>
@@ -79,8 +79,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
   margin-top: 60px;
+  
 }
 
 h1, h2 {
@@ -99,5 +100,8 @@ li {
 
 a {
   color: #42b983;
+}
+body {
+  background-color:#212529;
 }
 </style>
