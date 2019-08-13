@@ -37,7 +37,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-img src='./src/assets/811-logo.svg' width='150' style="padding-top:50px; padding-bottom: 25px;" />
+    <b-img src='./src/assets/811-logo.svg' width='150' style="padding-top:30px; padding-bottom: 25px;" />
   </div>
 </template>
 
