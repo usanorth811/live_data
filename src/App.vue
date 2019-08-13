@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <b-container>
-      <b-row>
+      <b-row style='padding-bottom:25px'>
         <b-col>
-          <h1 style='padding-bottom:25px'>Live Stats</h1>
+          <h1 >{{myDate}} </h1>
+          <h3>Total Tickets: {{info[0].Total + info[1].Total}}  -  {{((info[0].Total/(info[0].Total + info[1].Total))*100).toString().slice(0,5)}}% Web</h3>
         </b-col>
       </b-row>
       <b-row>
@@ -47,7 +48,8 @@ export default {
       info2: null,
       info3: null,
       info4: null,
-      info5: null
+      info5: null,
+      myDate : new Date().toISOString().slice(5,10)
     }
   },
   mounted () {
