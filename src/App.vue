@@ -3,21 +3,21 @@
     
     <b-container fluid>
       <b-row >
-        <b-col cols='4'>
-          <div style='margin-bottom: -25px; position: absolute;z-index : 1;'>
+        <b-col cols='3'>
+          <div style=''>
           <h1 ><a >{{myDate}}</a> </h1>
           
           </div>
         </b-col>
         <b-col cols='6'>
-          <div style='text-align: center !important;margin-bottom: -25px; position: absolute;z-index : 1;'>
+          <div style=' '>
           <h2>
           Total Tickets: {{info[0].Total + info[1].Total}}  -  {{((info[0].Total/(info[0].Total + info[1].Total))*100).toString().slice(0,5)}}% Web </h2>
           <h4>Express Tickets : {{info8[0].Total}}</h4>
           </div>
         </b-col>
       </b-row>
-      <div> 
+      <div class="d-none d-lg-block"> 
     <b-carousel
       id="carousel-fade"
       fade
@@ -25,15 +25,16 @@
       controls
       indicators
       background="#212529"
+      height='50px'
       img-width="1024"
-      img-height="480"
+      img-height="440"
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
       <b-carousel-slide img-blank img-alt="Blank image">
-        <b-row>
-        <b-col lg='4' md='12' style='padding-bottom:25px'>
+        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 600px'>
+        <b-col lg='4' md='12' >
           <div>
             <h4>Total Tickets {{((info[0].Total/(info[0].Total + info[1].Total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="info"></b-table>
@@ -47,7 +48,7 @@
             <b-table striped hover dark :items="info5"></b-table>
           </div>
         </b-col>
-        <b-col lg='8' md='12' style="">
+        <b-col lg='8' md='12' style="position:relative; overflow-y:auto;">
           <div>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
@@ -75,14 +76,14 @@
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
       <b-carousel-slide img-blank img-alt="Blank image">
-        <b-row>
-        <b-col lg='6' md='12' style="position:relative; overflow-y:auto; height:580px;padding-bottom:25px">
+        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 600px'>
+        <b-col lg='6' md='12' style="padding-bottom:25px">
           <div>
             <h4>DPS Leaderboard</h4>
             <b-table striped hover dark :items="info2" ></b-table>
           </div>
         </b-col>
-        <b-col lg='6' md='12' style="position:relative; overflow-y:auto; height:580px;padding-bottom:25px">
+        <b-col lg='6' md='12' style="padding-bottom:25px">
           <div>
             <h4>WEB Leaderboard</h4>
             <b-table striped hover dark :items="info3"></b-table>
@@ -92,6 +93,58 @@
       </b-carousel-slide>
 
     </b-carousel>
+  </div>
+  <div class="d-lg-none"> 
+<b-row style='padding-bottom:25px;'>
+        <b-col lg='4' md='12' >
+          <div>
+            <h4>Total Tickets {{((info[0].Total/(info[0].Total + info[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <b-table striped hover dark :items="info"></b-table>
+          </div>
+          <div>
+            <h4>CA Tickets {{((info4[0].Total/(info4[0].Total + info4[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <b-table striped hover dark :items="info4"></b-table>
+          </div>
+          <div>
+            <h4>NV Tickets {{((info5[0].Total/(info5[0].Total + info5[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <b-table striped hover dark :items="info5"></b-table>
+          </div>
+        </b-col>
+        <b-col lg='8' md='12' style="position:relative; overflow-y:auto;">
+          <div>
+            <h4>Web %</h4>
+            <h5 style="margin-bottom: -15px;">
+            Contractors: {{((info7[0].Total/(info7[0].Total + info6[0].Total))*100).toString().slice(0,5)}}% - 
+            Members: {{((info7[1].Total/(info7[1].Total + info6[1].Total))*100).toString().slice(0,5)}}% - 
+            Homeowners: {{((info7[2].Total/(info7[2].Total + info6[2].Total))*100).toString().slice(0,5)}}% - </h5>
+            <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
+            
+          </div>
+          <div style=" margin-top: -15px">
+            <h4>Web Tickets by User Type</h4>
+            <b-table striped hover dark :items="info7" ></b-table>
+          </div>
+        
+          <div>
+            <h4>DPS Tickets by User Type</h4>
+            <b-table striped hover dark :items="info6"></b-table>
+          </div>
+        </b-col>
+      </b-row>
+      <b-row style='padding-bottom:25px'>
+        <b-col lg='6' md='12' style="position:relative; overflow-y:auto; height:580px;padding-bottom:25px">
+          <div>
+            <h4>DPS Leaderboard</h4>
+            <b-table striped hover dark :items="info2" ></b-table>
+          </div>
+        </b-col>
+        <b-col lg='6' md='12' style="padding-bottom:25px">
+          <div>
+            <h4>WEB Leaderboard</h4>
+            <b-table striped hover dark :items="info3"></b-table>
+          </div>
+        </b-col>
+      </b-row>
   </div>
 
     </b-container>
