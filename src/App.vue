@@ -12,7 +12,7 @@
         <b-col cols='6'>
           <div style=' '>
           <h2>
-          Total Tickets: {{total[0].Total + total[1].Total}}  -  {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web </h2>
+          Total Tickets: {{(total[0].Total + total[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web </h2>
           <h4>Express Tickets : {{sat[0].Total}}</h4>
           </div>
         </b-col>
@@ -21,7 +21,7 @@
     <b-carousel
       id="carousel-fade"
       fade
-      :interval="15000"
+      :interval="10000"
       controls
       indicators
       background="#212529"
@@ -52,8 +52,8 @@
 
 
       <b-carousel-slide id='slide_2' img-blank img-alt="Blank image">
-        <h3>Live Feed</h3>
-        <b-row style='padding-bottom:25px;height: 600px'>
+        <h3>Today</h3>
+        <b-row style='padding-bottom:25px;height: 550px'>
         <b-col md='4' >
           <div>
             <h4>Total Tickets - {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web</h4>
@@ -76,15 +76,15 @@
       </b-carousel-slide>
 
       <b-carousel-slide id='slide_3' img-blank img-alt="Blank image">
-        
-        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 600px'>
+        <h3>Today</h3>
+        <b-row style='padding-bottom:25px;height: 590px'>
         <b-col lg='4' md='12' >
           <h4>Web Tickets</h4>
         <pie-chart width="auto" height="250px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <h4>DPS Tickets</h4>
         <pie-chart width="auto" height="250px" :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </b-col>
-        <b-col lg='8' md='12' style="position:relative; overflow-y:auto;">
+        <b-col lg='8' md='12' style="">
           <div>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
@@ -110,7 +110,8 @@
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
       <b-carousel-slide id='slide_4' img-blank img-alt="Blank image">
-        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 600px'>
+        <h3>Today</h3>
+        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 560px'>
         <b-col lg='6' md='12' style="padding-bottom:25px">
           <div>
             <h4>DPS Leaderboard</h4>
