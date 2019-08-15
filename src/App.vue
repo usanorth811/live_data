@@ -90,8 +90,8 @@
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
             Contractors: {{((type_web[0].Total/(type_web[0].Total + type_csr[0].Total))*100).toString().slice(0,5)}}% - 
-            Members: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
-            Homeowners: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% </h5>
+            Homeowners: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
+            Members: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% </h5>
             <hr class="my-4" style="border-color:#ced4da; margin-left:100px;margin-right:100px;">
             
           </div>
