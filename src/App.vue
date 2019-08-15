@@ -131,6 +131,7 @@
     </b-carousel>
   </div>
   <div class="d-lg-none"> 
+    <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
 <b-row style='padding-bottom:25px;'>
         <b-col lg='4' md='12' >
           <h3>Today</h3>
