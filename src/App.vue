@@ -39,7 +39,7 @@
         <b-row style='padding-bottom:50px;height: 550px'>
         <b-col md='12' >
           <div>
-            <h4>{{(ytd[0].Total + ytd[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[0].Total/(ytd[0].Total + ytd[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>{{(ytd[0].Total + ytd[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[1].Total/(ytd[0].Total + ytd[1].Total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="ytd"></b-table>
           </div>
         </b-col>
