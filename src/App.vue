@@ -4,8 +4,9 @@
     <b-container fluid>
       <b-row >
         <b-col cols='3'>
+          
           <div style=''>
-          <h1 ><a >{{myDate}}</a> </h1>
+          <h1 ><b-img src='./src/assets/811-logo.svg' width='130px' style='margin-left:-50px; padding-right:50px' /><a >{{myDate}}</a> </h1>
           
           </div>
         </b-col>
