@@ -60,13 +60,14 @@
             <h4>Total Tickets - {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="total"></b-table>
           </div>
-          <pie-chart :download="true" width="auto" height="250px" :data="[[total[0].Name, total[0].Total], [total[1].Name, total[1].Total]]" :colors="['#42b983', '#e83e8c']" />
+          <pie-chart :download="true" width="auto" height="250px" style='opacity: 0.9;' :data="[[total[0].Name, total[0].Total], [total[1].Name, total[1].Total]]" :colors="['#42b983', '#e83e8c']" />
         </b-col>
         <b-col md='8' >
           <div>
             <h5>CA Tickets {{((ca[0].Total/(ca[0].Total + ca[1].Total))*100).toString().slice(0,5)}}% Web</h5>
             <b-table striped hover  dark :items="ca"></b-table>
           </div>
+          
           <div>
             <h5>NV Tickets {{((nv[0].Total/(nv[0].Total + nv[1].Total))*100).toString().slice(0,5)}}% Web</h5>
             <b-table striped hover  dark :items="nv"></b-table>
@@ -81,9 +82,10 @@
         <b-row style='padding-bottom:25px;height: 590px'>
         <b-col lg='4' md='12' >
           <h4>Web Tickets</h4>
-        <pie-chart :download="true" width="auto" height="250px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="250px" style='opacity: 0.9;'  :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <hr class="my-4" style=" margin-left:175px;margin-right:175px;">
         <h4>DPS Tickets</h4>
-        <pie-chart :download="true" width="auto" height="250px" :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="250px" style='opacity: 0.9;' :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </b-col>
         <b-col lg='8' md='12' style="">
           <div>
