@@ -46,7 +46,7 @@
         </b-row>
         <b-row>
         <b-col  md='12' style='margin-top:-350px'>
-          <column-chart height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total]]"></column-chart>
+          <column-chart :download="true" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total]]"></column-chart>
         </b-col>
       </b-row>
       </b-carousel-slide>
@@ -60,7 +60,7 @@
             <h4>Total Tickets - {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="total"></b-table>
           </div>
-          <pie-chart width="auto" height="250px" :data="[[total[0].Name, total[0].Total], [total[1].Name, total[1].Total]]" :colors="['#42b983', '#e83e8c']" />
+          <pie-chart :download="true" width="auto" height="250px" :data="[[total[0].Name, total[0].Total], [total[1].Name, total[1].Total]]" :colors="['#42b983', '#e83e8c']" />
         </b-col>
         <b-col md='8' >
           <div>
@@ -81,9 +81,9 @@
         <b-row style='padding-bottom:25px;height: 590px'>
         <b-col lg='4' md='12' >
           <h4>Web Tickets</h4>
-        <pie-chart width="auto" height="250px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="250px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <h4>DPS Tickets</h4>
-        <pie-chart width="auto" height="250px" :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="250px" :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </b-col>
         <b-col lg='8' md='12' style="">
           <div>
