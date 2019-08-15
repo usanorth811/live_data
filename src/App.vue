@@ -3,14 +3,14 @@
     
     <b-container fluid>
       <b-row >
-        <b-col cols='3'>
+        <b-col cols='2' class='d-none d-lg-block'>
           
           <div style=''>
           <h1 ><a >{{myDate}}</a> </h1>
           
           </div>
         </b-col>
-        <b-col cols='6'>
+        <b-col xl='8' lg='12'>
           <div style=' '>
           <h2>
           Total Tickets: {{(total[0].Total + total[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web </h2>
