@@ -45,8 +45,10 @@
         </b-col>
         </b-row>
         <b-row>
+          
+          
         <b-col  md='12' style='margin-top:-350px'>
-          <column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total]]"></column-chart>
+          <column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total]]"></column-chart>
         </b-col>
       </b-row>
       </b-carousel-slide>
@@ -82,20 +84,22 @@
         <b-row style='padding-bottom:25px;height: 590px'>
         <b-col lg='4' md='12' >
           <h4>Web Tickets</h4>
+          <div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
         <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;'  :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <hr class="my-4" style=" margin-left:175px;margin-right:175px;">
         <h4>DPS Tickets</h4>
         <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        </div>
         </b-col>
         <b-col lg='8' md='12' style="">
-          <div>
+          <div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
             Contractors: {{((type_web[0].Total/(type_web[0].Total + type_csr[0].Total))*100).toString().slice(0,5)}}% - 
             Homeowners: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
             Members: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% </h5>
             <hr class="my-4" style="border-color:#ced4da; margin-left:100px;margin-right:100px;">
-            
+            </div>
           </div>
           <div style=" margin-top: -15px">
             <h4>Web Tickets </h4>
@@ -164,15 +168,15 @@
         <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
         <b-col lg='8' md='12' style="position:relative; overflow-y:auto;">
           <h3>User Types</h3>
-          <div>
+          <div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
             Contractors: {{((type_web[0].Total/(type_web[0].Total + type_csr[0].Total))*100).toString().slice(0,5)}}% - 
             Homeowners: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
             Members: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% - </h5>
             <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
-            
-          </div>
+            </div>
+          </div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
           <div style=" margin-top: -15px">
             <h4>Web Tickets by User Type</h4>
             <b-table striped hover dark :items="type_web" ></b-table>
@@ -181,7 +185,7 @@
           <div>
             <h4>DPS Tickets by User Type</h4>
             <b-table striped hover dark :items="type_csr"></b-table>
-          </div>
+          </div></div>
           <h4>Web Tickets</h4>
         <pie-chart :download="true" width="auto" height="450px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <h4 style='padding-top: 20px'>DPS Tickets</h4>
@@ -224,6 +228,7 @@ export default {
       type_web: null,
       sat: null,
       month: null,
+      months: [],
       ytd: null,
       myDate : new Date().toISOString().slice(5,10)
     }
@@ -253,7 +258,7 @@ export default {
         .then(response => (self.sat = response.data.Referral), axios.get('https://guarded-depths.com/reports/month')
         .then(response => (self.month = response.data.Referral), axios.get('https://guarded-depths.com/reports/ytd')
         .then(response => (self.ytd = response.data.Referral)))))))))));
-    }, 20000);
+    }, 30000);
       
   }
 }
@@ -293,5 +298,13 @@ body {
 img {
   max-width: 65%;
     
+}
+.orientation {
+  width: 400px /* normal width */
+}
+@media print {
+  .ortientation {
+    width: 100% /* print width */
+  }
 }
 </style>
