@@ -46,10 +46,11 @@
         </b-col>
         </b-row>
         <b-row>
-          
-          
+          <div v-for="month in month" :key='month' class="member" style='display:none !important;'>
+            {{data.push([month.Name,month.Total])}}
+          </div>
         <b-col  md='12' style='margin-top:-350px'>
-          <column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total]]"></column-chart>
+          <column-chart :download="{background: 'white'}" height='250px' :data="data"></column-chart>
         </b-col>
       </b-row>
       </b-carousel-slide>
@@ -232,6 +233,7 @@ export default {
       months: [],
       ytd: null,
       yesterday: null,
+      data: [],
       myDate : new Date().toISOString().slice(5,10)
     }
   },
