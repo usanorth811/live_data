@@ -15,6 +15,7 @@
           <h2>
           Total Tickets: {{(total[0].Total + total[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web </h2>
           <h4>Express Tickets : {{sat[0].Total}}</h4>
+          Yesterday: {{(yesterday[0].Total + yesterday[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].Total/(yesterday[0].Total + yesterday[1].Total))*100).toString().slice(0,5)}}% Web 
           </div>
         </b-col>
       </b-row>
@@ -230,6 +231,7 @@ export default {
       month: null,
       months: [],
       ytd: null,
+      yesterday: null,
       myDate : new Date().toISOString().slice(5,10)
     }
   },
@@ -244,7 +246,8 @@ export default {
         .then(response => (self.type_web = response.data.Referral), axios.get('https://guarded-depths.com/reports/sat')
         .then(response => (self.sat = response.data.Referral), axios.get('https://guarded-depths.com/reports/month')
         .then(response => (self.month = response.data.Referral), axios.get('https://guarded-depths.com/reports/ytd')
-        .then(response => (self.ytd = response.data.Referral)))))))))));
+        .then(response => (self.ytd = response.data.Referral), axios.get('https://guarded-depths.com/reports/yesterday')
+        .then(response => (self.yesterday = response.data.Referral))))))))))));
     var self = this;
     setInterval(function(){
       axios.get('https://guarded-depths.com/reports/total')
@@ -257,7 +260,8 @@ export default {
         .then(response => (self.type_web = response.data.Referral), axios.get('https://guarded-depths.com/reports/sat')
         .then(response => (self.sat = response.data.Referral), axios.get('https://guarded-depths.com/reports/month')
         .then(response => (self.month = response.data.Referral), axios.get('https://guarded-depths.com/reports/ytd')
-        .then(response => (self.ytd = response.data.Referral)))))))))));
+        .then(response => (self.ytd = response.data.Referral), axios.get('https://guarded-depths.com/reports/yesterday')
+        .then(response => (self.yesterday = response.data.Referral))))))))))));
     }, 30000);
       
   }
