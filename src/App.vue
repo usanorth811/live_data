@@ -13,9 +13,9 @@
         <b-col xl='8' lg='12'>
           <div style=' '>
           <h2>
-          Total Tickets: {{(total[0].Total + total[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web </h2>
-          <h4>Express Tickets : {{sat[0].Total}}</h4>
-          Yesterday: {{(yesterday[0].Total + yesterday[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].Total/(yesterday[0].Total + yesterday[1].Total))*100).toString().slice(0,5)}}% Web 
+          total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
+          <h4>Express Tickets : {{sat[0].total}}</h4>
+          Yesterday: {{(yesterday[0].total + yesterday[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].total/(yesterday[0].total + yesterday[1].total))*100).toString().slice(0,5)}}% Web 
           </div>
         </b-col>
       </b-row>
@@ -40,7 +40,7 @@
         <b-row style='padding-bottom:50px;height: 550px'>
         <b-col md='12' >
           <div>
-            <h4>{{(ytd[0].Total + ytd[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[1].Total/(ytd[0].Total + ytd[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>{{(ytd[0].total + ytd[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[1].total/(ytd[0].total + ytd[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="ytd"></b-table>
           </div>
         </b-col>
@@ -48,19 +48,19 @@
         <b-row>
           
         <b-col  md='12' style='margin-top:-350px'>
-          <span v-if="month[12]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total],[month[9].Name, month[9].Total],[month[10].Name, month[10].Total],[month[11].Name, month[11].Total],[month[12].Name, month[12].Total]]"></column-chart></span>
-          <span v-else-if="month[11]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total],[month[9].Name, month[9].Total],[month[10].Name, month[10].Total],[month[11].Name, month[11].Total]]"></column-chart></span>
-          <span v-else-if="month[10]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total],[month[9].Name, month[9].Total],[month[10].Name, month[10].Total]]"></column-chart></span>
-          <span v-else-if="month[9]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total],[month[9].Name, month[9].Total]]"></column-chart></span>
-          <span v-else-if="month[8]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total],[month[8].Name, month[8].Total]]"></column-chart></span>
-          <span v-else-if="month[7]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total]]"></column-chart></span>
-          <span v-else-if="month[6]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total]]"></column-chart></span>
-          <span v-else-if="month[5]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total]]"></column-chart></span>
-          <span v-else-if="month[4]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total]]"></column-chart></span>
-          <span v-else-if="month[3]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total]]"></column-chart></span>
-          <span v-else-if="month[2]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total]]"></column-chart></span>
-          <span v-else-if="month[1]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total]]"></column-chart></span>
-          <span v-else><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].Name, month[0].Total]]"></column-chart></span>
+          <span v-if="month[12]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total],[month[8].name, month[8].total],[month[9].name, month[9].total],[month[10].name, month[10].total],[month[11].name, month[11].total],[month[12].name, month[12].total]]"></column-chart></span>
+          <span v-else-if="month[11]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total],[month[8].name, month[8].total],[month[9].name, month[9].total],[month[10].name, month[10].total],[month[11].name, month[11].total]]"></column-chart></span>
+          <span v-else-if="month[10]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total],[month[8].name, month[8].total],[month[9].name, month[9].total],[month[10].name, month[10].total]]"></column-chart></span>
+          <span v-else-if="month[9]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total],[month[8].name, month[8].total],[month[9].name, month[9].total]]"></column-chart></span>
+          <span v-else-if="month[8]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total],[month[8].name, month[8].total]]"></column-chart></span>
+          <span v-else-if="month[7]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total]]"></column-chart></span>
+          <span v-else-if="month[6]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total]]"></column-chart></span>
+          <span v-else-if="month[5]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total]]"></column-chart></span>
+          <span v-else-if="month[4]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total]]"></column-chart></span>
+          <span v-else-if="month[3]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total]]"></column-chart></span>
+          <span v-else-if="month[2]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total]]"></column-chart></span>
+          <span v-else-if="month[1]"><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total]]"></column-chart></span>
+          <span v-else><column-chart :download="{background: 'white'}" height='250px' :data="[[month[0].name, month[0].total]]"></column-chart></span>
         </b-col>
       </b-row>
       </b-carousel-slide>
@@ -71,19 +71,19 @@
         <b-row style='padding-bottom:25px;height: 550px'>
         <b-col md='4' >
           <div>
-            <h4>Total Tickets - {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>total Tickets - {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="total"></b-table>
           </div>
-          <pie-chart  :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[total[0].Name, total[0].Total], [total[1].Name, total[1].Total]]" :colors="['#42b983', '#e83e8c']" />
+          <pie-chart  :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[total[0].name, total[0].total], [total[1].name, total[1].total]]" :colors="['#42b983', '#e83e8c']" />
         </b-col>
         <b-col md='8' >
           <div>
-            <h5>CA Tickets {{((ca[0].Total/(ca[0].Total + ca[1].Total))*100).toString().slice(0,5)}}% Web</h5>
+            <h5>CA Tickets {{((ca[0].total/(ca[0].total + ca[1].total))*100).toString().slice(0,5)}}% Web</h5>
             <b-table striped hover  dark :items="ca"></b-table>
           </div>
           
           <div>
-            <h5>NV Tickets {{((nv[0].Total/(nv[0].Total + nv[1].Total))*100).toString().slice(0,5)}}% Web</h5>
+            <h5>NV Tickets {{((nv[0].total/(nv[0].total + nv[1].total))*100).toString().slice(0,5)}}% Web</h5>
             <b-table striped hover  dark :items="nv"></b-table>
           </div>
         </b-col>
@@ -96,20 +96,20 @@
         <b-row style='padding-bottom:25px;height: 590px'>
         <b-col lg='4' md='12' >
           <h4>Web Tickets</h4>
-          <div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
-        <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;'  :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+          <div v-if="type_csr[1].name != 'HOME'">No Data</div><div v-else>
+        <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;'  :data="[[type_web[0].name, type_web[0].total], [type_web[1].name, type_web[1].total],[type_web[2].name, type_web[2].total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <hr class="my-4" style=" margin-left:175px;margin-right:175px;">
         <h4>DPS Tickets</h4>
-        <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[type_csr[0].name, type_csr[0].total], [type_csr[1].name, type_csr[1].total],[type_csr[2].name, type_csr[2].total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </div>
         </b-col>
         <b-col lg='8' md='12' style="">
-          <div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
+          <div><div v-if="type_csr[1].name != 'HOME'">No Data</div><div v-else>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
-            Contractors: {{((type_web[0].Total/(type_web[0].Total + type_csr[0].Total))*100).toString().slice(0,5)}}% - 
-            Homeowners: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
-            Members: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% </h5>
+            Contractors: {{((type_web[0].total/(type_web[0].total + type_csr[0].total))*100).toString().slice(0,5)}}% - 
+            Homeowners: {{((type_web[1].total/(type_web[1].total + type_csr[1].total))*100).toString().slice(0,5)}}% - 
+            Members: {{((type_web[2].total/(type_web[2].total + type_csr[2].total))*100).toString().slice(0,5)}}% </h5>
             <hr class="my-4" style="border-color:#ced4da; margin-left:100px;margin-right:100px;">
             </div>
           </div>
@@ -154,15 +154,15 @@
         <b-col lg='4' md='12' >
           <h3>Today</h3>
           <div>
-            <h4>Total Tickets {{((total[0].Total/(total[0].Total + total[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>total Tickets {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="total"></b-table>
           </div>
           <div>
-            <h4>CA Tickets {{((ca[0].Total/(ca[0].Total + ca[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>CA Tickets {{((ca[0].total/(ca[0].total + ca[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="ca"></b-table>
           </div>
           <div>
-            <h4>NV Tickets {{((nv[0].Total/(nv[0].Total + nv[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>NV Tickets {{((nv[0].total/(nv[0].total + nv[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="nv"></b-table>
           </div>
         </b-col>
@@ -170,25 +170,25 @@
         <b-col md='12' >
           <div>
             <h3>YTD</h3>
-            <h4>{{(ytd[0].Total + ytd[1].Total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[1].Total/(ytd[0].Total + ytd[1].Total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>{{(ytd[0].total + ytd[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets - {{((ytd[1].total/(ytd[0].total + ytd[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="ytd"></b-table>
           </div>
         </b-col>
         <b-col  md='12'>
-          <column-chart :download="true" height='250px' :data="[[month[0].Name, month[0].Total], [month[1].Name, month[1].Total],[month[2].Name, month[2].Total],[month[3].Name, month[3].Total], [month[4].Name, month[4].Total],[month[5].Name, month[5].Total],[month[6].Name, month[6].Total], [month[7].Name, month[7].Total]]"></column-chart>
+          <column-chart :download="true" height='250px' :data="[[month[0].name, month[0].total], [month[1].name, month[1].total],[month[2].name, month[2].total],[month[3].name, month[3].total], [month[4].name, month[4].total],[month[5].name, month[5].total],[month[6].name, month[6].total], [month[7].name, month[7].total]]"></column-chart>
         </b-col>
         <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
         <b-col lg='8' md='12' style="position:relative; overflow-y:auto;">
           <h3>User Types</h3>
-          <div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
+          <div><div v-if="type_csr[1].name != 'HOME'">No Data</div><div v-else>
             <h4>Web %</h4>
             <h5 style="margin-bottom: -15px;">
-            Contractors: {{((type_web[0].Total/(type_web[0].Total + type_csr[0].Total))*100).toString().slice(0,5)}}% - 
-            Homeowners: {{((type_web[1].Total/(type_web[1].Total + type_csr[1].Total))*100).toString().slice(0,5)}}% - 
-            Members: {{((type_web[2].Total/(type_web[2].Total + type_csr[2].Total))*100).toString().slice(0,5)}}% - </h5>
+            Contractors: {{((type_web[0].total/(type_web[0].total + type_csr[0].total))*100).toString().slice(0,5)}}% - 
+            Homeowners: {{((type_web[1].total/(type_web[1].total + type_csr[1].total))*100).toString().slice(0,5)}}% - 
+            Members: {{((type_web[2].total/(type_web[2].total + type_csr[2].total))*100).toString().slice(0,5)}}% - </h5>
             <hr class="my-4" style="border-color:#ced4da; margin-left:175px;margin-right:175px;">
             </div>
-          </div><div v-if="type_csr[1].Name != 'HOME'">No Data</div><div v-else>
+          </div><div v-if="type_csr[1].name != 'HOME'">No Data</div><div v-else>
           <div style=" margin-top: -15px">
             <h4>Web Tickets by User Type</h4>
             <b-table striped hover dark :items="type_web" ></b-table>
@@ -199,9 +199,9 @@
             <b-table striped hover dark :items="type_csr"></b-table>
           </div></div>
           <h4>Web Tickets</h4>
-        <pie-chart :download="true" width="auto" height="450px" :data="[[type_web[0].Name, type_web[0].Total], [type_web[1].Name, type_web[1].Total],[type_web[2].Name, type_web[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="450px" :data="[[type_web[0].name, type_web[0].total], [type_web[1].name, type_web[1].total],[type_web[2].name, type_web[2].total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         <h4 style='padding-top: 20px'>DPS Tickets</h4>
-        <pie-chart :download="true" width="auto" height="450px" :data="[[type_csr[0].Name, type_csr[0].Total], [type_csr[1].Name, type_csr[1].Total],[type_csr[2].Name, type_csr[2].Total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
+        <pie-chart :download="true" width="auto" height="450px" :data="[[type_csr[0].name, type_csr[0].total], [type_csr[1].name, type_csr[1].total],[type_csr[2].name, type_csr[2].total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </b-col>
       </b-row>
       <b-row style='padding-bottom:25px'>
