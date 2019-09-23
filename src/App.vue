@@ -247,31 +247,31 @@ export default {
     }
   },
   mounted () {
-    axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/total')
-        .then(response => (self.total = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/dps')
-        .then(response => (self.dps = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/web')
-        .then(response => (self.web = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/ca')
-        .then(response => (self.ca = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/nv')
-        .then(response => (self.nv = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/type_csr')
-        .then(response => (self.type_csr = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/type_web')
-        .then(response => (self.type_web = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/sat')
-        .then(response => (self.sat = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/month')
-        .then(response => (self.month = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/ytd')
-        .then(response => (self.ytd = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/yesterday')
+    axios.get('https://www.triveea.com/reports/total')
+        .then(response => (self.total = response.data.Referral), axios.get('https://www.triveea.com/reports/dps')
+        .then(response => (self.dps = response.data.Referral), axios.get('https://www.triveea.com/reports/web')
+        .then(response => (self.web = response.data.Referral), axios.get('https://www.triveea.com/reports/ca')
+        .then(response => (self.ca = response.data.Referral), axios.get('https://www.triveea.com/reports/nv')
+        .then(response => (self.nv = response.data.Referral), axios.get('https://www.triveea.com/reports/type_csr')
+        .then(response => (self.type_csr = response.data.Referral), axios.get('https://www.triveea.com/reports/type_web')
+        .then(response => (self.type_web = response.data.Referral), axios.get('https://www.triveea.com/reports/sat')
+        .then(response => (self.sat = response.data.Referral), axios.get('https://www.triveea.com/reports/month')
+        .then(response => (self.month = response.data.Referral), axios.get('https://www.triveea.com/reports/ytd')
+        .then(response => (self.ytd = response.data.Referral), axios.get('https://www.triveea.com/reports/yesterday')
         .then(response => (self.yesterday = response.data.Referral))))))))))));
     var self = this;
     setInterval(function(){
-      axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/total')
-        .then(response => (self.total = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/dps')
-        .then(response => (self.dps = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/web')
-        .then(response => (self.web = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/ca')
-        .then(response => (self.ca = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/nv')
-        .then(response => (self.nv = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/type_csr')
-        .then(response => (self.type_csr = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/type_web')
-        .then(response => (self.type_web = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/sat')
-        .then(response => (self.sat = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/month')
-        .then(response => (self.month = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/ytd')
-        .then(response => (self.ytd = response.data.Referral), axios.get('https://usanapi-env.x2abjghhj3.us-west-1.elasticbeanstalk.com/reports/yesterday')
+      axios.get('https://www.triveea.com/reports/total')
+        .then(response => (self.total = response.data.Referral), axios.get('https://www.triveea.com/reports/dps')
+        .then(response => (self.dps = response.data.Referral), axios.get('https://www.triveea.com/reports/web')
+        .then(response => (self.web = response.data.Referral), axios.get('https://www.triveea.com/reports/ca')
+        .then(response => (self.ca = response.data.Referral), axios.get('https://www.triveea.com/reports/nv')
+        .then(response => (self.nv = response.data.Referral), axios.get('https://www.triveea.com/reports/type_csr')
+        .then(response => (self.type_csr = response.data.Referral), axios.get('https://www.triveea.com/reports/type_web')
+        .then(response => (self.type_web = response.data.Referral), axios.get('https://www.triveea.com/reports/sat')
+        .then(response => (self.sat = response.data.Referral), axios.get('https://www.triveea.com/reports/month')
+        .then(response => (self.month = response.data.Referral), axios.get('https://www.triveea.com/reports/ytd')
+        .then(response => (self.ytd = response.data.Referral), axios.get('https://www.triveea.com/reports/yesterday')
         .then(response => (self.yesterday = response.data.Referral))))))))))));
     }, 30000);
       
