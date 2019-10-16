@@ -2,6 +2,28 @@
   <div id="app">
     
     <b-container fluid>
+      <div v-if="this.yesterday == null" class="d-lg-block">
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              <div class="spinner-border text-info" role="status" style='width: 3rem; height: 3rem;'>
+                <span class="sr-only">Loading...</span>
+              </div>
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+              &nbsp; <p />
+      </div>
+      <div v-else >
       <b-row >
         <b-col cols='2' class='d-none d-lg-block'>
           
@@ -13,7 +35,7 @@
         <b-col xl='8' lg='12'>
           <div style=' '>
           <h2>
-          total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
+          Total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
           <h4>Express Tickets : {{sat[0].total}}</h4>
           Yesterday: {{(yesterday[0].total + yesterday[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].total/(yesterday[0].total + yesterday[1].total))*100).toString().slice(0,5)}}% Web 
           </div>
@@ -219,7 +241,7 @@
         </b-col>
       </b-row>
   </div>
-
+  </div>
     </b-container>
     <b-img src='./src/assets/811-logo.svg' width='115' style="padding-top:30px; padding-bottom: 25px;" />
     
