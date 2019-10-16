@@ -36,7 +36,7 @@
           <div style=' '>
           <h2>
           Total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
-          <h4>Express Tickets : {{sat[0].total}}</h4>
+          <h4>Express Tickets: {{sat[0].total}}</h4>
           Yesterday: {{(yesterday[0].total + yesterday[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].total/(yesterday[0].total + yesterday[1].total))*100).toString().slice(0,5)}}% Web 
           </div>
         </b-col>
@@ -93,7 +93,7 @@
         <b-row style='padding-bottom:25px;height: 550px'>
         <b-col md='4' >
           <div>
-            <h4>total Tickets - {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web</h4>
+            <h4>Total Tickets - {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web</h4>
             <b-table striped hover dark :items="total"></b-table>
           </div>
           <pie-chart  :download="{background: 'white'}" width="auto" height="250px" style='opacity: 0.9;' :data="[[total[0].name, total[0].total], [total[1].name, total[1].total]]" :colors="['#42b983', '#e83e8c']" />
