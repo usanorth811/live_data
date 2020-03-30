@@ -25,19 +25,23 @@
       </div>
       <div v-else >
       <b-row >
+        <b-col cols='2' class='float-left d-none d-lg-block'>
+          <b-img src='./src/assets/usanorthlogo.png' width='600px' />
+        </b-col>
+        
+        <b-col xl='8' lg='12'>
+          <div style='padding-top: 25px'>
+          <h2>
+          Total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
+          <h4>Express Tickets: {{sat[0].total}}</h4>
+          Yesterday: {{(yesterday[0].total + yesterday[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].total/(yesterday[0].total + yesterday[1].total))*100).toString().slice(0,5)}}% Web 
+          </div>
+        </b-col>
         <b-col cols='2' class='d-none d-lg-block'>
           
           <div style=''>
           <h1 ><a >{{myDate}}</a> </h1>
           
-          </div>
-        </b-col>
-        <b-col xl='8' lg='12'>
-          <div style=' '>
-          <h2>
-          Total Tickets: {{(total[0].total + total[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}  -  {{((total[0].total/(total[0].total + total[1].total))*100).toString().slice(0,5)}}% Web </h2>
-          <h4>Express Tickets: {{sat[0].total}}</h4>
-          Yesterday: {{(yesterday[0].total + yesterday[1].total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} Tickets  -  {{((yesterday[0].total/(yesterday[0].total + yesterday[1].total))*100).toString().slice(0,5)}}% Web 
           </div>
         </b-col>
       </b-row>
@@ -150,23 +154,7 @@
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide id='slide_4' img-blank img-alt="Blank image">
-        <h3>Today</h3>
-        <b-row style='padding-bottom:25px;position:relative; overflow-y:auto;height: 560px'>
-        <b-col lg='6' md='12' style="padding-bottom:25px">
-          <div>
-            <h4>DPS Leaderboard</h4>
-            <b-table striped hover dark :items="dps" ></b-table>
-          </div>
-        </b-col>
-        <b-col lg='6' md='12' style="padding-bottom:25px">
-          <div>
-            <h4>WEB Leaderboard</h4>
-            <b-table striped hover dark :items="web"></b-table>
-          </div>
-        </b-col>
-      </b-row>
-      </b-carousel-slide>
+      
 
     </b-carousel>
   </div>
@@ -238,20 +226,7 @@
         <pie-chart :download="true" width="auto" height="450px" :data="[[type_csr[0].name, type_csr[0].total], [type_csr[1].name, type_csr[1].total],[type_csr[2].name, type_csr[2].total]]" :colors="['#42b983', '#ffc107', '#e83e8c']" />
         </b-col>
       </b-row>
-      <b-row style='padding-bottom:25px'>
-        <b-col lg='6' md='12' style="padding-bottom:25px">
-          <div>
-            <h4>DPS Leaderboard</h4>
-            <b-table striped hover dark :items="dps" ></b-table>
-          </div>
-        </b-col>
-        <b-col lg='6' md='12' style="padding-bottom:25px">
-          <div>
-            <h4>WEB Leaderboard</h4>
-            <b-table striped hover dark :items="web"></b-table>
-          </div>
-        </b-col>
-      </b-row>
+      
   </div>
   </div>
     </b-container>
